@@ -5,17 +5,29 @@
     <title>Title</title>
 </head>
 <body>
-
+<p id="count"></p>
+<button onclick="countNum()">Đếm</button>
 </body>
 <script>
-    let index = 1;
-    while (index <= 100) {
-        console.log(index);
-        if (index == 99) {
-            alert('Hoàn thành');
-            //break;
+    // let index = 1;
+    // while (index <= 100) {
+    //     console.log(index);
+    //     if (index == 99) {
+    //         alert('Hoàn thành');
+    //         //break;
+    //     }
+    //     index++;
+    // }
+    let count = 0;
+    function countNum(){
+        count ++;
+        if(count >= 10){
+            alert ('Hoàn thành');
+            return;
         }
-        index++;
+        setTimeout(countNum,1000);
+        document.getElementById("count").innerHTML=count;
     }
+
 </script>
 </html>
